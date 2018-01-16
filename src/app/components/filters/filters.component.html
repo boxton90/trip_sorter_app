@@ -1,17 +1,17 @@
 <section class="hero">
   <div class="hero-body pt0">
     <div class="container">
-      <div class="tabs is-toggle">
+      <div class="tabs is-toggle is-fullwidth">
         <ul>
-          <li>
+          <li (click)="onFilterClicked($event)" class="is-active">
             <a>
               <span class="icon is-small">
                 <i class="fa fa-money" aria-hidden="true"></i>
               </span>
-              <span>Cheapest ({{currency}})</span>
+              <span>Cheapest</span>
             </a>
           </li>
-          <li>
+          <li (click)="onFilterClicked($event)">
             <a>
               <span class="icon is-small">
                 <i class="fa fa-fighter-jet" aria-hidden="true"></i>

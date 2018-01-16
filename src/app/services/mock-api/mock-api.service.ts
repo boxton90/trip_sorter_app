@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Response } from '../model/response';
-import { Deal } from '../model/deal';
+import { Response } from '../../model/response';
 
 @Injectable()
 export class MockApiService {
@@ -27,6 +26,7 @@ export class MockApiService {
     return this.responseData;
   }
 
+  // function to get list of departure cities without repetition
   getDepartureList(): Array<string> {
 
     let deals = this.responseData.deals;
@@ -41,6 +41,7 @@ export class MockApiService {
     return departureList;
   }
 
+  // function to get list of arrival cities without repetition
   getArrivalList() {
     let deals = this.responseData.deals;
     var arrivalList: Array<string> = new Array<string>();

@@ -9,10 +9,17 @@ import { Deal } from './model/deal';
 })
 export class AppComponent implements OnInit {
 
+  showSearchResult : boolean = false;
+
+
   constructor(){}
 
   ngOnInit(){
     
+  }
+
+  onSearchClicked(showResult : boolean){
+    this.showSearchResult = showResult;
   }
 
 }

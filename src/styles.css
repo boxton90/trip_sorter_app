@@ -1,4 +1,15 @@
 /** CSS HELPERS **/
 .pt0{
-    padding-top: 0 !important;
+    padding-top: 0!important;
+}
+.w100{
+    width: 100%!important;
+}
+.w50{
+    width: 50%!important;
+}
+/** BULMA CSS FRAMEWORK OVERWRITE **/
+.tabs.is-toggle li.is-active a{
+    background-color: #00d1b2;
+    border-color: #00d1b2;
 }

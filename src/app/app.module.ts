@@ -1,11 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule , APP_INITIALIZER } from '@angular/core';
 import { AppComponent } from './app.component';
-import { MockApiService } from './services/mock-api.service';
+import { MockApiService } from './services/mock-api/mock-api.service';
 import { HttpClientModule } from '@angular/common/http';
 import { SectorComponent } from './components/sector/sector.component';
 import { FiltersComponent } from './components/filters/filters.component';
 import { SearchComponent } from './components/search/search.component';
+import { SearchResultComponent } from './components/search-result/search-result.component';
+import { FormsModule } from '@angular/forms';
+import { SearchDataService } from './services/search-data/search-data.service';
 
 
 @NgModule({
@@ -13,13 +16,16 @@ import { SearchComponent } from './components/search/search.component';
     AppComponent,
     SectorComponent,
     FiltersComponent,
-    SearchComponent
+    SearchComponent,
+    SearchResultComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [MockApiService,
+    SearchDataService,
     { provide: APP_INITIALIZER, useFactory: MockApiProviderFactory, deps: [MockApiService], multi: true }],
   bootstrap: [AppComponent]
 })

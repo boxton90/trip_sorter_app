@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MockApiService } from '../../services/mock-api.service';
+import { MockApiService } from '../../services/mock-api/mock-api.service';
+import { SearchDataService } from '../../services/search-data/search-data.service';
 
 @Component({
   selector: 'app-filters',
@@ -8,12 +9,20 @@ import { MockApiService } from '../../services/mock-api.service';
 })
 export class FiltersComponent implements OnInit {
 
-  currency : string;
-  
-  constructor(private mockApiService : MockApiService) { }
+  currency: string;
+  filterSelected: string = 'cheapest';
+
+  constructor(private mockApiService: MockApiService, private searchDataService : SearchDataService) { }
 
   ngOnInit() {
     this.currency = this.mockApiService.getCurrency();
+  }
+
+  //function to update UI and filter selected at searchDataService
+  onFilterClicked(event) {
+    this.filterSelected = event.target.innerText;
+    event.currentTarget.classList.toggle('is-active');
+    this.searchDataService.changeFilter(this.filterSelected);
   }
 
 }
