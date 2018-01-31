@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Response } from '../../model/response';
+import { Deal } from '../../model/deal';
 
 @Injectable()
 export class MockApiService {
@@ -24,6 +25,10 @@ export class MockApiService {
 
   getAllData(): Response {
     return this.responseData;
+  }
+
+  getDeals() : Array<Deal>{
+    return this.responseData.deals;
   }
 
   // function to get list of departure cities without repetition

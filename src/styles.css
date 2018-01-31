@@ -2,6 +2,12 @@
 .pt0{
     padding-top: 0!important;
 }
+.mb3{
+    margin-bottom: 3rem!important;
+}
+.mbpoint6{
+    margin-bottom: .6rem!important;
+}
 .w100{
     width: 100%!important;
 }

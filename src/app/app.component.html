@@ -5,9 +5,9 @@
     </div>
   </div>
 </section>
-<section>
-  <app-sector></app-sector>
-  <app-filters></app-filters>
-</section>
+
+<app-sector></app-sector>
+<app-filters></app-filters>
 <app-search (searchClicked)="onSearchClicked($event)"></app-search>
+
 <app-search-result *ngIf="showSearchResult"></app-search-result>

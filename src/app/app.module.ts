@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule , APP_INITIALIZER } from '@angular/core';
+import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { AppComponent } from './app.component';
 import { MockApiService } from './services/mock-api/mock-api.service';
 import { HttpClientModule } from '@angular/common/http';
@@ -30,7 +30,7 @@ import { SearchDataService } from './services/search-data/search-data.service';
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  
+
 }
 
 // Function to load and provided the server data to the app when the app it is getting initialized 

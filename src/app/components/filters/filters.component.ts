@@ -11,18 +11,34 @@ export class FiltersComponent implements OnInit {
 
   currency: string;
   filterSelected: string = 'cheapest';
+  cheapestTabSelected : boolean = true;
+  fastestTabSelected : boolean = false;
 
-  constructor(private mockApiService: MockApiService, private searchDataService : SearchDataService) { }
-
-  ngOnInit() {
+  constructor(private mockApiService: MockApiService, private searchDataService : SearchDataService) {
     this.currency = this.mockApiService.getCurrency();
+    this.searchDataService.changeFilter(this.filterSelected);
   }
 
-  //function to update UI and filter selected at searchDataService
-  onFilterClicked(event) {
-    this.filterSelected = event.target.innerText;
-    event.currentTarget.classList.toggle('is-active');
-    this.searchDataService.changeFilter(this.filterSelected);
+  ngOnInit() {
+    
+  }
+
+  onCheapestFilterClicked(event) {
+    if(!this.cheapestTabSelected){
+      this.cheapestTabSelected = !this.cheapestTabSelected;
+      this.fastestTabSelected = !this.fastestTabSelected;
+      this.filterSelected = 'cheapest';
+      this.searchDataService.changeFilter(this.filterSelected);
+    }
+  }
+
+  onFastestFilterClicked(event) {
+    if(!this.fastestTabSelected){
+      this.fastestTabSelected = !this.fastestTabSelected;
+      this.cheapestTabSelected = !this.cheapestTabSelected;
+      this.filterSelected = 'fastest';
+      this.searchDataService.changeFilter(this.filterSelected);
+    }
   }
 
 }

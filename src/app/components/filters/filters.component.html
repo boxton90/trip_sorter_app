@@ -3,7 +3,7 @@
     <div class="container">
       <div class="tabs is-toggle is-fullwidth">
         <ul>
-          <li (click)="onFilterClicked($event)" class="is-active">
+          <li [ngClass]="{'is-active' : cheapestTabSelected}" (click)="onCheapestFilterClicked($event)">
             <a>
               <span class="icon is-small">
                 <i class="fa fa-money" aria-hidden="true"></i>
@@ -11,7 +11,7 @@
               <span>Cheapest</span>
             </a>
           </li>
-          <li (click)="onFilterClicked($event)">
+          <li [ngClass]="{'is-active' : fastestTabSelected}" (click)="onFastestFilterClicked($event)">
             <a>
               <span class="icon is-small">
                 <i class="fa fa-fighter-jet" aria-hidden="true"></i>
