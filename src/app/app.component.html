@@ -1,13 +1,12 @@
-<section class="hero">
-  <div class="hero-body has-text-centered">
+<section class="hero is-fullheight heading-bg">
+  <div class="hero-body">
     <div class="container">
-      <h1>Trip Sorter</h1>
+      <app-header></app-header>
+      <app-sector></app-sector>
+      <app-filters></app-filters>
+      <app-search (searchClicked)="onSearchClicked($event)"></app-search>
     </div>
   </div>
 </section>
-
-<app-sector></app-sector>
-<app-filters></app-filters>
-<app-search (searchClicked)="onSearchClicked($event)"></app-search>
 
 <app-search-result *ngIf="showSearchResult"></app-search-result>

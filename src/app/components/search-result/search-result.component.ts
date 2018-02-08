@@ -17,14 +17,14 @@ export class SearchResultComponent implements OnInit {
   searchData: SearchData;
   deals: Array<Deal>;
   results: Array<Deal>;
-  currency: string;
+  currencySymbol : string;
   tripTotalCost: number;
   tripTotalDuration : Duration;
   showTripWarning: boolean;
 
   constructor(private mockApiService: MockApiService, private searchDataService: SearchDataService) {
     this.deals = this.mockApiService.getDeals();
-    this.currency = this.mockApiService.getCurrency();
+    this.currencySymbol = this.mockApiService.getCurrencySymbol();
     this.searchDataService.searchDataObservable.subscribe(searchData => this.searchData = searchData);
     this.results = new Array<Deal>();
     this.tripTotalCost = 0;

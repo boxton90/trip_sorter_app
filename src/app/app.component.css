@@ -1,0 +1,8 @@
+*{
+    font-family: 'Open Sans', sans-serif;
+}
+.heading-bg{
+    background-image: url(/assets/img/header-bg.jpg);
+    background-size: cover;
+    background-position: center;
+}

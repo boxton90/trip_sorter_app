@@ -1,0 +1,11 @@
+.title, .subtitle{
+    color: #ffffff;
+}
+.title{
+    font-family: 'Pacifico', cursive;
+    font-size: 3.5rem;
+    line-height: 5rem;
+}
+.subtitle{
+    font-size: 2rem;
+}

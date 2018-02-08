@@ -1,39 +1,43 @@
 <section class="hero">
-  <div class="hero-body pt0">
+  <div class="hero-body">
     <div *ngIf="!showTripWarning">
-      <div *ngFor="let result of results" class="card mb3">
+      <div class="columns is-desktop is-multiline">
+      <div *ngFor="let result of results" class="card mb3 column is-half p0 {{result.transport}}">
         <section class="hero is-medium has-text-centered {{result.arrival | lowercase}}-bg">
           <div class="hero-body">
-            <div class="container">
-              <h1 class="title mbpoint6 has-text-white">
+              <h1 class="title mbpoint6 has-text-white is-size-2">
                 {{result.departure}}
               </h1>
               <i class="fa fa-2x fa-{{result.transport}} has-text-white" aria-hidden="true"></i>
-                <h1 class="title has-text-white">
-                  {{result.arrival}}
-                </h1>
-            </div>
+              <h1 class="title has-text-white is-size-2">
+                {{result.arrival}}
+              </h1>
           </div>
         </section>
         <div class="card-content">
             <div class="columns has-text-centered">
                 <div class="column is-half">
-                    <p>{{result.cost - ((result.cost * result.discount) / 100)}} {{currency}}</p>
+                  <p *ngIf="result.discount !== 0" class="cost-not-discounted">{{result.cost}} {{currencySymbol}}</p>  
+                  <p class="is-size-3">{{result.cost - ((result.cost * result.discount) / 100)}} {{currencySymbol}}</p>
                 </div>
                 <div class="column is-half">
-                  <p>Trip duration</p>
-                  <p>{{result.duration.h}}h:{{result.duration.m}}m</p>
-                  <p>Trip reference</p>
-                  <p>{{result.reference}}</p>
+                  <p class="is-size-5">Trip duration</p>
+                  <p class="is-size-5">{{result.duration.h}}h:{{result.duration.m}}m</p>
+                  <p class="is-size-5">Trip reference</p>
+                  <p class="is-size-5">{{result.reference}}</p>
                 </div>
               </div>
         </div>
+      </div>
       </div>
       <div class="content" class="box">
         <article class="media">
           <div class="media-content has-text-centered">
             <div>
-              <p>Total {{tripTotalDuration.h}}h:{{tripTotalDuration.m}}m {{tripTotalCost}} {{currency}}</p>
+              <div class="columns">
+                <div class="column"><p class="is-size-3">{{tripTotalCost}} {{currencySymbol}}</p></div>
+                <div class="column"><p class="is-size-3">{{tripTotalDuration.h}}h:{{tripTotalDuration.m}}m</p></div>
+              </div>
             </div>
           </div>
         </article>

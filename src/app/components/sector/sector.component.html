@@ -7,7 +7,7 @@
           <div class="field">
             <label class="label">From</label>
             <p class="control has-icons-left">
-              <span class="select w100">
+              <span class="select is-primary is-medium w100">
                 <select class="w100" [(ngModel)]="departureSelected" (change)="onChangeCity();">
                   <option *ngFor="let departure of departureList">{{departure}}</option>
                 </select>
@@ -22,7 +22,7 @@
           <div class="field">
             <label class="label">To</label>
             <p class="control has-icons-left">
-              <span class="select w100">
+              <span class="select is-primary is-medium w100">
                 <select class="w100" [(ngModel)]="arrivalSelected" (change)="onChangeCity();">
                   <option *ngFor="let arrival of arrivalList">{{arrival}}</option>
                 </select>

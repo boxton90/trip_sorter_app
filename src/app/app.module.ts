@@ -9,6 +9,7 @@ import { SearchComponent } from './components/search/search.component';
 import { SearchResultComponent } from './components/search-result/search-result.component';
 import { FormsModule } from '@angular/forms';
 import { SearchDataService } from './services/search-data/search-data.service';
+import { HeaderComponent } from './components/header/header.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { SearchDataService } from './services/search-data/search-data.service';
     SectorComponent,
     FiltersComponent,
     SearchComponent,
-    SearchResultComponent
+    SearchResultComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

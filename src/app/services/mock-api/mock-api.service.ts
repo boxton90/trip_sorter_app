@@ -64,4 +64,22 @@ export class MockApiService {
     return this.responseData.currency;
   }
 
+  getCurrencySymbol(): string{
+    
+    let currency : string = this.getCurrency();
+
+    switch(currency){
+      case 'EUR':
+        return '€';
+      case 'USD':
+        return '$';
+      case 'GBP':
+        return '£';
+      case 'JPY':
+        return '¥';
+      default:
+        return currency;
+    }
+  }
+
 }
