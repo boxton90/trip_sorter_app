@@ -2,8 +2,9 @@
   <div class="hero-body">
     <div *ngIf="!showTripWarning">
       <div class="columns is-desktop is-multiline">
-      <div *ngFor="let result of results" class="card mb3 column is-half p0 {{result.transport}}">
-        <section class="hero is-medium has-text-centered {{result.arrival | lowercase}}-bg">
+      <div *ngFor="let result of results" class="column is-half">
+        <div class="card hero {{result.transport}}">
+        <section class="img-container is-medium has-text-centered {{result.arrival | lowercase}}-bg">
           <div class="hero-body">
               <h1 class="title mbpoint6 has-text-white is-size-2">
                 {{result.departure}}
@@ -22,25 +23,36 @@
                 </div>
                 <div class="column is-half">
                   <p class="is-size-5">Trip duration</p>
-                  <p class="is-size-5">{{result.duration.h}}h:{{result.duration.m}}m</p>
+                  <p class="is-size-5">{{result.duration.h}}h {{result.duration.m}}m</p>
                   <p class="is-size-5">Trip reference</p>
                   <p class="is-size-5">{{result.reference}}</p>
                 </div>
               </div>
         </div>
+        </div>
       </div>
-      </div>
-      <div class="content" class="box">
-        <article class="media">
-          <div class="media-content has-text-centered">
-            <div>
-              <div class="columns">
-                <div class="column"><p class="is-size-3">{{tripTotalCost}} {{currencySymbol}}</p></div>
-                <div class="column"><p class="is-size-3">{{tripTotalDuration.h}}h:{{tripTotalDuration.m}}m</p></div>
+      <div class="column is-half">
+        <div class="box">
+          
+          <div class="columns">
+            <div class="column is-half">
+              <p class="title mb1point25">Trip Route</p>
+              <div class="route-list-container">
+                <ul *ngFor="let result of results; let i=index" class="route-list">
+                  <li *ngIf="i == 0" class="first-element-route">{{result.departure}}</li>
+                  <li class="route-list-icon"><i class="fa fa-{{result.transport}}" aria-hidden="true"></i><span> {{result.duration.h}}h {{result.duration.m}}m</span></li>
+                  <li>{{result.arrival}}</li>
+                </ul>
               </div>
             </div>
+            <div class="column is-half">
+              <p class="title mb1point25">Total</p>
+              <p class="is-size-3">{{tripTotalDuration.h}}h {{tripTotalDuration.m}}m</p>
+              <p class="is-size-3">{{tripTotalCost}} {{currencySymbol}}</p>
+            </div>
           </div>
-        </article>
+        </div>
+      </div>
       </div>
     </div>
     <article *ngIf="showTripWarning" class="message is-warning">

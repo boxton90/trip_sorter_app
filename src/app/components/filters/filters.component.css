@@ -1,3 +1,10 @@
-.tabs.is-toggle a{
-    color: #ffffff;
-} 
+.tabs.is-toggle li.is-active a{
+    background-color: #00d1b2;
+    border-color: #00d1b2;
+}
+.tabs.is-toggle a {
+    background-color: white;
+}
+.tabs{
+    opacity: 0.9;
+}

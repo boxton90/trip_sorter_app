@@ -15,15 +15,13 @@ export class SectorComponent implements OnInit {
   departureSelected: string;
   arrivalSelected: string;
 
-  message: string;
-
   constructor(private mockApiService: MockApiService, private searchDataService: SearchDataService) {
     this.departureList = this.mockApiService.getDepartureList();
     this.arrivalList = this.mockApiService.getArrivalList();
   }
 
   ngOnInit() {
-
+    
   }
   
   //function to update sector info at searchDataService

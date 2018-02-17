@@ -62,22 +62,22 @@
     background-image: url(/assets/img/cities/Warsaw.jpg);
     background-size: cover;
 }
-.card .hero{
+.card .img-container{
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     border-top: 5px solid;
 }
-.bus.card .hero{
+.bus.card .img-container{
     border-top-color: #7D7ABC;
 }
-.plain.card .hero{
+.plain.card .img-container{
     border-top-color: #6457A6;
 }
-.car.card .hero{
+.car.card .img-container{
     border-top-color: #EF767A;
 }
-.train.card .hero{
-    border-top-color: #FFE347;
+.train.card .img-container{
+    border-top-color: #E8CF41;
 }
 .bus.card .card-content{
     background-color: #7D7ABC;
@@ -89,7 +89,7 @@
     background-color: #EF767A;
 }
 .train.card .card-content{
-    background-color: #FFE347;
+    background-color: #E8CF41;
 }
 .card, .box{
     box-shadow: 4px 4px 30px #c3c3c3;
@@ -108,4 +108,45 @@
 .cost-not-discounted{
     text-decoration: line-through;
     font-size: 1rem;
+}
+.box{
+    border-top: 5px solid #00d1b2;
+}
+.route-list-container{
+    margin-bottom: 1.25rem;
+}
+.route-list {
+    list-style: none;
+}
+.route-list >li {
+    position: relative;
+}
+.route-list>li:before {
+    content: '\25CF';
+    margin-right: 10px;
+    font-size: 20px;
+}
+.route-list .route-list-icon:before {
+    content: '';
+}
+.route-list-icon{
+    padding-left: 12px;
+}
+.route-list>li:after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: '';
+    border-left: 2px solid black;
+    margin-left: 5px;
+    height: 100%;
+}
+.route-list >li:first-of-type:after {
+    top: -50%;
+}
+.route-list >li:last-of-type:after {
+    top: -50%;
+}
+.route-list .first-element-route:after{
+    top: 50% !important;
 }

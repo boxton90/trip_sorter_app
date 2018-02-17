@@ -11,14 +11,12 @@
 .mbpoint6{
     margin-bottom: .6rem!important;
 }
+.mb1point25{
+    margin-bottom: 1.25rem!important;
+}
 .w100{
     width: 100%!important;
 }
 .w50{
     width: 50%!important;
-}
-/** BULMA CSS FRAMEWORK OVERWRITE **/
-.tabs.is-toggle li.is-active a{
-    background-color: #00d1b2;
-    border-color: #00d1b2;
 }
