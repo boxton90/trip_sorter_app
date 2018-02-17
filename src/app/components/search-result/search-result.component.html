@@ -3,7 +3,7 @@
     <div *ngIf="!showTripWarning">
       <div class="columns is-desktop is-multiline">
       <div *ngFor="let result of results" class="column is-half">
-        <div class="card hero {{result.transport}}">
+        <div class="card hero {{result.transport}}" data-aos="fade-up" data-aos-duration="600">
         <section class="img-container is-medium has-text-centered {{result.arrival | lowercase}}-bg">
           <div class="hero-body">
               <h1 class="title mbpoint6 has-text-white is-size-2">
@@ -32,8 +32,7 @@
         </div>
       </div>
       <div class="column is-half">
-        <div class="box">
-          
+        <div class="box" data-aos="fade-up" data-aos-duration="600">
           <div class="columns">
             <div class="column is-half">
               <p class="title mb1point25">Trip Route</p>

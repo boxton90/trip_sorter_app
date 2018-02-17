@@ -2,9 +2,11 @@
   <div class="hero-body">
     <div class="container">
       <app-header></app-header>
-      <app-sector></app-sector>
-      <app-filters></app-filters>
-      <app-search (searchClicked)="onSearchClicked($event)"></app-search>
+      <div data-aos="fade-up" data-aos-duration="1000">
+        <app-sector></app-sector>
+        <app-filters></app-filters>
+        <app-search (searchClicked)="onSearchClicked($event)"></app-search>
+      </div>
     </div>
   </div>
 </section>
