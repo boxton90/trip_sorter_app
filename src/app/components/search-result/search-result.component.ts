@@ -21,6 +21,7 @@ export class SearchResultComponent implements OnInit {
   tripTotalCost: number;
   tripTotalDuration : Duration;
   showTripWarning: boolean;
+  tripWarningType: string;
 
   constructor(private mockApiService: MockApiService, private searchDataService: SearchDataService) {
     this.deals = this.mockApiService.getDeals();
@@ -84,6 +85,7 @@ export class SearchResultComponent implements OnInit {
 
     if (this.searchData.departure == this.searchData.arrival) {
       this.showTripWarning = true;
+      this.tripWarningType = this.searchData.filter;
     }
     else {
       
@@ -133,6 +135,7 @@ export class SearchResultComponent implements OnInit {
           indirectTripTotalCost = 0;
           stopWhileLoop = true;
           this.showTripWarning = true;
+          this.tripWarningType = this.searchData.filter;
         }
 
         loopCounter++;
@@ -202,6 +205,7 @@ export class SearchResultComponent implements OnInit {
 
     if (this.searchData.departure == this.searchData.arrival) {
       this.showTripWarning = true;
+      this.tripWarningType = this.searchData.filter;
     }
     else {
       
@@ -252,6 +256,7 @@ export class SearchResultComponent implements OnInit {
           indirectTripTotalCost = 0;
           stopWhileLoop = true;
           this.showTripWarning = true;
+          this.tripWarningType = this.searchData.filter;
         }
 
         loopCounter++;

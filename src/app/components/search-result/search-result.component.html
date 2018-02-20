@@ -54,10 +54,6 @@
       </div>
       </div>
     </div>
-    <article *ngIf="showTripWarning" class="message is-warning">
-      <div class="message-body">
-        We are sorry but there is no trip available for this route.
-      </div>
-    </article>
+    <app-warning *ngIf="showTripWarning" [filterSelected]="tripWarningType"></app-warning>
   </div>
 </section>
