@@ -15,12 +15,11 @@ export class FiltersComponent implements OnInit {
   fastestTabSelected : boolean = false;
 
   constructor(private mockApiService: MockApiService, private searchDataService : SearchDataService) {
-    this.currency = this.mockApiService.getCurrency();
-    this.searchDataService.changeFilter(this.filterSelected);
   }
 
   ngOnInit() {
-    
+    this.currency = this.mockApiService.getCurrency();
+    this.searchDataService.changeFilter(this.filterSelected);
   }
 
   onCheapestFilterClicked(event) {

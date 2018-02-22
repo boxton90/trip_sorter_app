@@ -24,15 +24,15 @@ export class SearchResultComponent implements OnInit {
   tripWarningType: string;
 
   constructor(private mockApiService: MockApiService, private searchDataService: SearchDataService) {
+  }
+
+  ngOnInit() {
     this.deals = this.mockApiService.getDeals();
     this.currencySymbol = this.mockApiService.getCurrencySymbol();
     this.searchDataService.searchDataObservable.subscribe(searchData => this.searchData = searchData);
     this.results = new Array<Deal>();
     this.tripTotalCost = 0;
     this.showTripWarning = false;
-  }
-
-  ngOnInit() {
     this.routeAlgorithm();
   }
 

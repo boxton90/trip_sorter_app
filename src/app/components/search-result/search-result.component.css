@@ -112,6 +112,13 @@
 .box{
     border-top: 5px solid #00d1b2;
 }
+.total{
+    margin-top: 2.25rem;
+    margin-bottom: 1rem;
+}
+.total-duration, .total-cost{
+    font-size: 1.75rem;
+}
 .route-list-container{
     margin-bottom: 1.25rem;
 }
