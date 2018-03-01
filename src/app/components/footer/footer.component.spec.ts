@@ -22,4 +22,11 @@ describe('FooterComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('function getCurrentYear', () => {
+    let currentYear: string;
+    currentYear = component.getCurrentYear(new Date('03/25/2020'));
+    expect(currentYear).toEqual('2020');
+  });
+
 });

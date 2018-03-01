@@ -172,9 +172,6 @@ export class SearchResultComponent implements OnInit {
 
     let deals: Array<Deal>;
     let dealsFiltered: Array<Deal> = new Array<Deal>();
-
-    //let arrayCostsDiscounted: Array<number> = new Array<number>();
-    //let minArrayCostDiscounted: number;
     
     let arrayDurations: Array<number> = new Array<number>();
     let minArrayDuration: number;
@@ -248,7 +245,6 @@ export class SearchResultComponent implements OnInit {
           indirectTripTotalDuration.m += dealsFiltered[0].duration.m * 1;
 
           dealsFiltered = [];
-          //arrayCostsDiscounted = [];
           arrayDurations = [];
         }
         else {

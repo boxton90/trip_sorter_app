@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FiltersComponent } from './filters.component';
+import { MockApiService } from '../../services/mock-api/mock-api.service';
+import { HttpClientModule } from '@angular/common/http';
+import { SearchDataService } from '../../services/search-data/search-data.service';
 
 describe('FiltersComponent', () => {
   let component: FiltersComponent;
@@ -8,7 +11,11 @@ describe('FiltersComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FiltersComponent ]
+      declarations: [ FiltersComponent ],
+      imports: [
+        HttpClientModule
+      ],
+      providers: [ MockApiService , SearchDataService]
     })
     .compileComponents();
   }));

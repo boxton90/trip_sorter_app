@@ -23,10 +23,12 @@ export class MockApiService {
     })
   }
 
+  // function to get all respond data
   getAllData(): Response {
     return this.responseData;
   }
 
+  // function to get deals
   getDeals() : Array<Deal>{
     return this.responseData.deals;
   }
@@ -60,10 +62,12 @@ export class MockApiService {
     return arrivalList;
   }
 
+  // function to get currency
   getCurrency(): string {
     return this.responseData.currency;
   }
 
+  // function to get currency symbol 
   getCurrencySymbol(): string{
     
     let currency : string = this.getCurrency();

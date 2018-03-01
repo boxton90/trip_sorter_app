@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class WarningComponent implements OnInit {
 
-  @Input() filterSelected: string;
+  @Input() tripWarningType: string;
 
   constructor() { }
 

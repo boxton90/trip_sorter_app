@@ -9,7 +9,6 @@ import { SearchDataService } from '../../services/search-data/search-data.servic
 })
 export class FiltersComponent implements OnInit {
 
-  currency: string;
   filterSelected: string = 'cheapest';
   cheapestTabSelected : boolean = true;
   fastestTabSelected : boolean = false;
@@ -18,7 +17,6 @@ export class FiltersComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.currency = this.mockApiService.getCurrency();
     this.searchDataService.changeFilter(this.filterSelected);
   }
 
