@@ -91,6 +91,9 @@
 .train.card .card-content{
     background-color: #E8CF41;
 }
+.card{
+    border-radius: 5px;
+}
 .card, .box{
     box-shadow: 4px 4px 30px #c3c3c3;
 }
